@@ -32,7 +32,7 @@ node {
       sh "'${mvnHome}/bin/mvn' deploy"
   }
   stage ('Deliver & Deployment') {
-      sh 'curl -u admin:redhat@123 -T target/**.war "http://52.66.167.53:8080/manager/text/deploy?path=/devops&update=true"'
+      sh 'curl -u admin:linux@123 -T target/**.war "http://52.66.167.53:8080/manager/text/deploy?path=/devops&update=true"'
   }
   stage ('SmokeTest') {
       sh 'curl --retry-delay 10 --retry 5 "http://52.66.167.53:8080/devops"'
